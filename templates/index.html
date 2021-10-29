@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Севастополь/Краснодар</title>
+    <link href="../static/css/index.css" rel="stylesheet">
+    <link rel="icon" href="../static/img/weather.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="block-main container">
+        <h3 class="heading">Краткая статистика по Севастополю и Краснодару</h3>
+        <div class="card-box">
+            <div class="card">
+                <img class="card__img" src="../static/img/sevas-logo.jpg" alt="box-1">
+
+            <span class="temp-main">{{ main_data[0].temp }} ℃</span><br>
+            <span class="info-main">{{ main_data[0].created }}</span>
+                <hr />
+
+            <span class="info-med">Макс. <b>{{ max_min_sev_info[0].temp }}℃</b> | {{ max_min_sev_info[0].time }}</span>
+            <span class="info">Мин. <b>{{ max_min_sev_info[-1].temp }}℃</b> | {{ max_min_sev_info[-1].time }}</span>
+
+                <hr />
+                <h4 class="heading-mini">Средняя за час с rp5.ru</h4>
+                <h2 class="temp-main-rp5">{{ AVG_rp5[0] }} ℃</h2><br>
+                <hr />
+
+            <span class="info-med">Макс. <b>{{ max_min_sev_rp5[0].temp }}℃</b> | {{ max_min_sev_rp5[0].time }} <br> {{ max_min_sev_rp5[0].descrip }}</span><br>
+            <span class="info">Макс. <b>{{ max_min_sev_rp5[-1].temp }}℃</b> | {{ max_min_sev_rp5[-1].time }} <br> {{ max_min_sev_rp5[-1].descrip }}</span>
+                <hr />
+
+                <a class="card__link" href="#">Learn more</a>
+            </div>
+            <div class="card">
+                <img class="card__img" src="../static/img/kras-logo.jpg" alt="box-1">
+
+                <span class="temp-main">{{ kras_AVG }} ℃</span><br>
+                <span class="info-main">{{ kras_date.created }}</span>
+                <p class="info">Средняя температура(за час)</p>
+                <hr />
+                <span class="info-med">Макс. <b>{{ kras_max_min[0].temperature }}℃</b> | {{ kras_max_min[0].time }} <br> {{ kras_max_min[0].street }}</span><br>
+                <span class="info">Макс. <b>{{ kras_max_min[-1].temperature }}℃</b> | {{ kras_max_min[-1].time }} <br> {{ kras_max_min[-1].street }}</span>
+                <hr />
+
+                <a class="card__link" href="#">Learn more</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
