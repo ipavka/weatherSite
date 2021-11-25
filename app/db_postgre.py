@@ -47,7 +47,7 @@ def select_max_min(table):
         cursor = conn.cursor()
         cursor.execute(f"SELECT temperature, time, descrip, view_date "
                        f"FROM {table} "
-                       f"WHERE created >= 'today'::timestamp "
+                       f"WHERE created >= 'today'::timestamp and temperature IS NOT NULL "
                        f"ORDER BY temperature DESC;")
         data = cursor.fetchall()
         for i in data:
